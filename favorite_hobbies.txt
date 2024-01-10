@@ -1,4 +1,8 @@
 1. Brazilian Jiu-Jitsu
 2. Watch movies
 3. Read books
+<<<<<<< HEAD
 4. Sleeping
+=======
+4. Meditate
+>>>>>>> f2b285ad2fdc36db038b0f105a06645cd15140aa
