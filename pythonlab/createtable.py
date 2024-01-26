@@ -1,8 +1,4 @@
-# WOOYEOK CHOI (2024.1.24)
-# This code is for the python-psql lab in the software design course
-
 import psycopg2
-from config import config
 
 def create_tables():
     conn = psycopg2.connect(
@@ -18,19 +14,17 @@ def create_tables():
     sql_commands = [
         """
         CREATE TABLE states (
-            id SERIAL PRIMARY KEY,
-            state_name VARCHAR(255) NOT NULL,
-            abbreviation VARCHAR(2) NOT NULL
+            state_name VARCHAR(255),
+            abbreviation VARCHAR(2)
         )
         """,
         """
         CREATE TABLE cities (
-            id SERIAL PRIMARY KEY,
-            city_name VARCHAR(255) NOT NULL,
-            state_id INTEGER REFERENCES states(id),
-            population INTEGER NOT NULL,
-            latitude FLOAT NOT NULL,
-            longitude FLOAT NOT NULL
+            city_name VARCHAR(255),
+            state_name VARCHAR(255),
+            population INTEGER,
+            latitude FLOAT,
+            longitude FLOAT
         )
         """
     ]
