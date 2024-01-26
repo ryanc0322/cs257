@@ -79,7 +79,7 @@ def main():
 
     extreme_cities()
 
-    user_input_state = input("Enter a State (abbreviation or full name): ")
+    user_input_state = input("Enter a State in full name: ")
     total_population_by_state(user_input_state)
 
 main()
