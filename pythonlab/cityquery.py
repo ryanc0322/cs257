@@ -61,8 +61,14 @@ def extreme_cities():
             print(f"The city furthest {directions[i]} is: {result[0][0]}")
 
 def total_population_by_state(state_input):
+    query_state_name = f"SELECT state_name FROM states WHERE abbreviation = '{state_input}'"
+    result_state_name = query_database(query_state_name)
 
-    query_total_population = f"SELECT SUM(population) FROM cities WHERE state_name = '{state_input}'"
+    if result_state_name:
+        state_name = result_state_name[0][0]
+    else:
+        state_name = state_input
+    query_total_population = f"SELECT SUM(population) FROM cities WHERE state_name = '{state_name}'"
     result_total_population = data_query(query_total_population)
 
     if result_total_population[0][0]:
@@ -79,7 +85,7 @@ def main():
 
     extreme_cities()
 
-    user_input_state = input("Enter a State in full name: ")
+    user_input_state = input("Enter a State in full name or abbreviation: ")
     total_population_by_state(user_input_state)
 
 main()
