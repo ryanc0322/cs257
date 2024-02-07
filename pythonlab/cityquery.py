@@ -62,7 +62,7 @@ def extreme_cities():
 
 def total_population_by_state(state_input):
     query_state_name = f"SELECT state_name FROM states WHERE abbreviation = '{state_input}'"
-    result_state_name = query_database(query_state_name)
+    result_state_name = data_query(query_state_name)
 
     if result_state_name:
         state_name = result_state_name[0][0]

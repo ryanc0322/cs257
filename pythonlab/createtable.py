@@ -13,18 +13,10 @@ def create_tables():
 
     sql_commands = [
         """
-        CREATE TABLE states (
-            state_name VARCHAR(255),
-            abbreviation VARCHAR(2)
-        )
-        """,
-        """
-        CREATE TABLE cities (
-            city_name VARCHAR(255),
-            state_name VARCHAR(255),
-            population INTEGER,
-            latitude FLOAT,
-            longitude FLOAT
+        CREATE TABLE state_population (
+            code VARCHAR(255),
+            state VARCHAR(255),
+	    population BIGINT
         )
         """
     ]
